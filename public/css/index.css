@@ -1,3 +1,10 @@
 #content {
     min-height: calc(100vh - 40px);
 }
+
+.nav-custom {
+    background-color: red;
+}
+.nav-custom .navbar-brand, .nav-custom .nav-link {
+    color: whitesmoke;
+}
