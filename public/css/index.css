@@ -3,8 +3,13 @@
 }
 
 .nav-custom {
-    background-color: red;
+    background-color: #ef233c;
 }
+
 .nav-custom .navbar-brand, .nav-custom .nav-link {
     color: whitesmoke;
+}
+
+.text {
+    text-align: center;
 }
