@@ -1,0 +1,30 @@
+:root {
+    /* CSS HEX */
+    --imperial-red: #e63946ff;
+    --honeydew: #f1faeeff;
+    --powder-blue: #a8dadcff;
+    --green: #b5c99a;
+    --light-green: #cfe1b9;
+}
+
+#content {
+    min-height: calc(100vh - 40px);
+}
+
+.nav-custom .navbar-brand, .nav-custom .nav-link {
+    color: black;
+}
+
+.even_row{
+    background-color: var(--light-green);
+}
+
+.odd_row{
+    background-color: var(--green);
+
+}
+
+.nav-item{
+    margin-left: 5%;
+    margin-right: 5%;
+}
