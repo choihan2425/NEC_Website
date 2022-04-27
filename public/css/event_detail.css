@@ -1,0 +1,14 @@
+:root {
+    /* CSS HEX */
+    --imperial-red: #ef233c;
+    --honeydew: #f1faeeff;
+    --powder-blue: #a8dadcff;
+    --darker-green: #4f772d;
+    --green: #b5c99a;
+    --light-green: #cfe1b9;
+}
+
+.nav-item{
+    margin-left: 5%;
+    margin-right: 5%;
+}
