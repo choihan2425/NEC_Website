@@ -23,7 +23,7 @@ test = [
 
 function get_resource_block(resource) {
     return `<li class="list-group-item">
-        <h3><a href="${resource.url}">${resource.title}</a></h3>
+        <h3 ><a style="text-decoration: none;" href="${resource.url}">${resource.title}</a></h3>
         <p>${resource.overview}</p>
     </li>
     `

@@ -71,3 +71,8 @@ app.get("/network", function (req, res) {
     res.sendFile(__dirname + "/public/network.html");
     console.log("Loading NETWORKS and INITIATIVES Page")
 });
+
+app.get("/newsletter", function (req, res) {
+    res.sendFile(__dirname + "/public/newsletter.html");
+    console.log("Loading NETWORKS and INITIATIVES Page")
+});
