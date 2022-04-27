@@ -33,6 +33,7 @@ app.get("/events", function (req, res) {
     console.log("Loading Events Page")
 });
 
+
 app.get("/get_all_events", function(req, res){
     Event.find(function (err, data) {
         if (err) {
@@ -66,3 +67,7 @@ app.get('/get_event_by_id', function (req, res) {
         });
     });
 
+app.get("/network", function (req, res) {
+    res.sendFile(__dirname + "/public/network.html");
+    console.log("Loading NETWORKS and INITIATIVES Page")
+});
