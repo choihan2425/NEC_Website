@@ -19,6 +19,15 @@ const eventSchema = {
 }
 const Event = mongoose.model('Event', eventSchema);
 
+const personSchema = {
+    name: String,
+    img: String,
+    role: String,
+    bio: String
+}
+
+const Person = mongoose.model('Person', personSchema);
+
 app.listen(3000, function () {
     console.log("server started at 3000");
 });
@@ -32,6 +41,11 @@ app.get("/events", function (req, res) {
     res.sendFile(__dirname + "/public/events.html");
     console.log("Loading Events Page")
 });
+
+app.get("/people", function (req, res) {
+    res.sendFile(__dirname + "/public/people.html");
+    console.log("Loading People Page")
+})
 
 app.get("/get_all_events", function(req, res){
     Event.find(function (err, data) {
@@ -65,4 +79,20 @@ app.get('/get_event_by_id', function (req, res) {
             }
         });
     });
+
+app.get('/get_all_people', function (req, res) {
+    Person.find(function (err, data) {
+        if (err) {
+            res.send({
+                "message": "internal database error",
+                "data": []
+            });
+        } else {
+            res.send({
+                "message": "success",
+                "data": data
+            })
+        }
+    })
+})
 
