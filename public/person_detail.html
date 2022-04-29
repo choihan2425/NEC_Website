@@ -28,7 +28,7 @@
       rel="stylesheet">
 
 <!--    JS-->
-<script src="js/people.js" defer></script>
+<script src="js/person_detail.js" defer></script>
 
 </head>
 <body>
@@ -81,24 +81,26 @@
     </nav>
 </section>
 
-
-<div class="container" style="padding: 0 5%;">
-    <h3>People</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, aspernatur cum dolorem enim, facere illo laboriosam nisi quia quod, repudiandae sequi similique sint unde? Ab corporis perspiciatis quod quos voluptatibus?</p>
-
-    <h3>NEC Staff</h3>
-    <div class="row" id="staff" style="border: 1px black solid"></div>
-
-    <h3>NEC Core Advisory Team</h3>
-    <div class="row" id="advisory_team" style="border: 1px black solid"></div>
-
-    <h3>Advisory Board</h3>
-    <div class="row" id="advisory_board" style="border: 1px black solid"></div>
-
-    <h3>NEC Student Fellows</h3>
-    <div class="row" id="student_fellows" style="border: 1px black solid"></div>
+<section class="container" id="person_info"> <!--    Fill this out-->
+    <div class="row">
+        <img id="img" src="" style="width: 50%">
+    </div>
+    <div class="row">
+        <div class="col-5">Name: </div>
+        <div class="col-7" id="name"></div>
+    </div>
+    <div class="row">
+        <div class="col-5">Role: </div>
+        <div class="col-7" id="role"></div>
+    </div>
+    <div class="row">
+        <div class="col-5">Bio: </div>
+        <div class="col-7" id="bio"></div>
+    </div>
+</section>
+<div>
+    <a class="btn btn-lg btn-primary" href="people.html" id="back_button">Back</a>
 </div>
-
 
 <!--Footer-->
 <section id="footer">

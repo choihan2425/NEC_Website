@@ -105,4 +105,19 @@ app.get('/get_all_people', function (req, res) {
     })
 })
 
-
+app.get('/get_person_by_id', function (req, res) {
+    // console.log(req.query.movie_id);
+    Person.find({"_id": req.query.person_id}, function (err, data) {
+        if (err || data.length === 0) {
+            res.send({
+                "message": "internal database error",
+                "data": {}
+            });
+        } else {
+            res.send({
+                "message": "success",
+                "data": data[0]
+            })
+        }
+    });
+});

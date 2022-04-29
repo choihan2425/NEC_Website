@@ -1,9 +1,9 @@
 function get_person_object(person) {
-    return `<div class="col-3">
-                <img src="${person.img}" alt="" data-p="${person._id}" style="width: 40%">
+    return `<div class="col-3 person" data-p="${person._id}">
+                <img src="${person.img}" alt="" style="width: 60%">
                 <h6>${person.name}</h6>
                 <p>${person.role}</p>
-                <button type="button" value='${JSON.stringify(event)}'>Show more</button>
+                <button type="button" class="show_more_btn" value='${JSON.stringify(event)}'>Show more</button>
             </div>`
 }
 
@@ -29,12 +29,24 @@ function showStaff(staff) {
     staff.forEach((person, idx) => {
         $('#staff').append(get_person_object(person));
     });
+
+    $('.show_more_btn').on('click', function(){
+        const person_id = $(this).parents('.person').attr('data-p');
+        console.log(person_id);
+        location.href = "person_detail.html?person_id=" + person_id;
+    });
 }
 
 function showAdvisoryTeam(advisory_team) {
     $("#advisory_team").empty();
     advisory_team.forEach((person, idx) => {
         $('#advisory_team').append(get_person_object(person));
+    });
+
+    $('.show_more_btn').on('click', function(){
+        const person_id = $(this).parents('.person').attr('data-p');
+        console.log(person_id);
+        location.href = "person_detail.html?person_id=" + person_id;
     });
 }
 
@@ -43,11 +55,23 @@ function showAdvisoryBoard(advisory_board) {
     advisory_board.forEach((person, idx) => {
         $('#advisory_board').append(get_person_object(person));
     });
+
+    $('.show_more_btn').on('click', function(){
+        const person_id = $(this).parents('.person').attr('data-p');
+        console.log(person_id);
+        location.href = "person_detail.html?person_id=" + person_id;
+    });
 }
 
 function showStudentFellows(student_fellows) {
     $("#student_fellows").empty();
     student_fellows.forEach((person, idx) => {
         $('#student_fellows').append(get_person_object(person));
+    });
+
+    $('.show_more_btn').on('click', function(){
+        const person_id = $(this).parents('.person').attr('data-p');
+        console.log(person_id);
+        location.href = "person_detail.html?person_id=" + person_id;
     });
 }
