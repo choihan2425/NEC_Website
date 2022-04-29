@@ -47,6 +47,15 @@ app.get("/people", function (req, res) {
     console.log("Loading People Page")
 })
 
+app.get("/network", function (req, res) {
+    res.sendFile(__dirname + "/public/network.html");
+    console.log("Loading Events Page")
+});
+
+app.get("/newsletter", function (req, res) {
+    res.sendFile(__dirname + "/public/newsletter.html");
+    console.log("Loading Events Page")
+});
 app.get("/get_all_events", function(req, res){
     Event.find(function (err, data) {
         if (err) {
@@ -95,4 +104,5 @@ app.get('/get_all_people', function (req, res) {
         }
     })
 })
+
 
