@@ -1,9 +1,9 @@
 function get_person_object(person) {
     return `<div class="col-3 person" data-p="${person._id}">
-                <img src="${person.img}" alt="" style="width: 60%">
+                <img src="img/about/people/${person.img}" alt="" style="width: 60%">
                 <h6>${person.name}</h6>
                 <p>${person.role}</p>
-                <button type="button" class="show_more_btn" value='${JSON.stringify(event)}'>Show more</button>
+                <button type="button" class="show_more_btn" value='${JSON.stringify(person)}'>Show more</button>
             </div>`
 }
 

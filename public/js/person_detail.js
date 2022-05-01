@@ -7,7 +7,7 @@ let person = {
 
 function load_person(person){
     $('#name').text(person.name);
-    $('#img').attr('src', person.img);
+    $('#img').attr('src', "img/about/people/" + person.img);
     $('#role').text(person.role);
     $('#bio').text(person.bio);
 }

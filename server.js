@@ -28,6 +28,20 @@ const personSchema = {
 
 const Person = mongoose.model('Person', personSchema);
 
+const workSchema = {
+    title: String,
+    description: String,
+    img:{
+        type: Array
+    },
+    bios:{
+        type: Array
+    },
+    video: String
+}
+
+const Work = mongoose.model('Work', workSchema);
+
 app.listen(3000, function () {
     console.log("server started at 3000");
 });
@@ -61,6 +75,11 @@ app.get("/newsletter", function (req, res) {
     res.sendFile(__dirname + "/public/newsletter.html");
     console.log("Loading Events Page")
 });
+
+app.get("/our_work", function (req, res) {
+    res.sendFile(__dirname + "/public/our_work.html");
+    console.log("Loading Our Work Page")
+})
 
 app.get("/get_all_events", function(req, res){
     Event.find(function (err, data) {
@@ -110,4 +129,54 @@ app.get('/get_all_people', function (req, res) {
         }
     })
 })
+
+app.get('/get_person_by_id', function (req, res) {
+    // console.log(req.query.movie_id);
+    Person.find({"_id": req.query.person_id}, function (err, data) {
+        if (err || data.length === 0) {
+            res.send({
+                "message": "internal database error",
+                "data": {}
+            });
+        } else {
+            res.send({
+                "message": "success",
+                "data": data[0]
+            })
+        }
+    });
+});
+
+app.get('/get_all_works', function (req, res) {
+    Work.find(function (err, data) {
+        if (err) {
+            res.send({
+                "message": "internal database error",
+                "data": []
+            });
+        } else {
+            res.send({
+                "message": "success",
+                "data": data
+            })
+        }
+    })
+})
+
+app.get('/get_work_by_id', function (req, res) {
+    // console.log(req.query.movie_id);
+    Work.find({"_id": req.query.work_id}, function (err, data) {
+        if (err || data.length === 0) {
+            res.send({
+                "message": "internal database error",
+                "data": {}
+            });
+        } else {
+            res.send({
+                "message": "success",
+                "data": data[0]
+            })
+        }
+    });
+});
 
