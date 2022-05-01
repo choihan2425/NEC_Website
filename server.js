@@ -1,16 +1,52 @@
+//npm i express body-parser mongoose express-session passport passport-local-mongoose
 const express = require("express");
 const bodyParser = require('body-parser');
 const app = express();
 const mongoose = require('mongoose');
+const session = require('express-session');
+const passport = require('passport');
+const passportLocalMongoose = require('passport-local-mongoose');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
+
+//Initialize passport
+app.use(session({
+    secret: "MyLittleSecretThatIdontWantOthersToKnow",
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 mongoose.connect('mongodb://127.0.0.1:27017/necDB',
     {useNewUrlParser: true}, function () {
         console.log("db connection successful");
     });
 
+const userSchema = new mongoose.Schema(
+    {
+        username: {
+            type: String,
+            unique: true,
+            required: [true, "Email cannot be empty"],
+        },
+        password: {
+            type: String,
+            require: true,
+            minLength: [5, "Password must be at least 5 characters"],
+        },
+        fullname: {
+            type: String,
+            required: true,
+        },
+    }
+)
+userSchema.plugin(passportLocalMongoose);
+const User = mongoose.model('User', userSchema);
+passport.use(User.createStrategy());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 const eventSchema = {
     title: String,
     date: String,
@@ -51,6 +87,79 @@ app.get("/", function (req, res) {
     console.log("Loading Home Page")
 });
 
+app.get('/get_current_user', function (req, res) {
+    if (req.isAuthenticated()) {
+        res.send({
+            message: "success",
+            data: req.user,
+        })
+    } else {
+        res.send({
+            message: "user not found",
+            data: {},
+        })
+    }
+});
+
+app.get('/register', (req, res) => {
+    if (req.query.error) {
+        res.redirect("/register.html?error=" + req.query.error);
+    } else {
+        res.redirect("/register.html");
+    }
+});
+
+app.post('/register', (req, res) => {
+    const newUser = {
+        username: req.body.username,
+        fullname: req.body.fullname,
+    }
+
+    User.register(newUser, req.body.password, (err, user) => {
+        if (err) {
+            console.log(err);
+            res.redirect('/register/?error=' + err);
+        } else {
+            console.log(user);
+
+            const authenticate = passport.authenticate('local');
+            authenticate(req, res, () => {
+                res.redirect('/')
+            });
+        }
+    })
+});
+app.get('/login', (req, res) => {
+    if (req.query.error) {
+        res.redirect("/login.html?error=" + req.query.error);
+    } else {
+        res.redirect("/login.html");
+    }
+});
+
+app.post('/login', (req, res) => {
+    const user = new User({
+        username: req.body.username,
+        password: req.body.password,
+    });
+    req.login(user, (err) => {
+        if (err) {
+            res.redirect("/login?error=database error")
+        } else {
+            const authenticate = passport.authenticate('local', {
+                successRedirect: "/",
+                failureRedirect: "/login?error=user does not exist or user name and password do not match"
+            });
+            authenticate(req, res);
+        }
+    })
+});
+
+app.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect("/");
+});
+
 app.get("/events", function (req, res) {
     res.sendFile(__dirname + "/public/events.html");
     console.log("Loading Events Page")
@@ -68,12 +177,27 @@ app.get("/about_nec", function (req, res) {
 
 app.get("/network", function (req, res) {
     res.sendFile(__dirname + "/public/network.html");
-    console.log("Loading Events Page")
+    console.log("Loading Network Page")
 });
 
 app.get("/newsletter", function (req, res) {
     res.sendFile(__dirname + "/public/newsletter.html");
-    console.log("Loading Events Page")
+    console.log("Loading Newsletter Page")
+});
+
+app.get("/readings", function (req, res) {
+    res.sendFile(__dirname + "/public/readings.html");
+    console.log("Loading Readings Page")
+});
+
+app.get("/films", function (req, res) {
+    res.sendFile(__dirname + "/public/films.html");
+    console.log("Loading Films Page")
+});
+
+app.get("/nature", function (req, res) {
+    res.sendFile(__dirname + "/public/nature.html");
+    console.log("Loading Nature Page")
 });
 
 app.get("/our_work", function (req, res) {
