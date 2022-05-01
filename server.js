@@ -54,12 +54,27 @@ app.get("/about_nec", function (req, res) {
 
 app.get("/network", function (req, res) {
     res.sendFile(__dirname + "/public/network.html");
-    console.log("Loading Events Page")
+    console.log("Loading Network Page")
 });
 
 app.get("/newsletter", function (req, res) {
     res.sendFile(__dirname + "/public/newsletter.html");
-    console.log("Loading Events Page")
+    console.log("Loading Newsletter Page")
+});
+
+app.get("/readings", function (req, res) {
+    res.sendFile(__dirname + "/public/readings.html");
+    console.log("Loading Readings Page")
+});
+
+app.get("/films", function (req, res) {
+    res.sendFile(__dirname + "/public/films.html");
+    console.log("Loading Films Page")
+});
+
+app.get("/nature", function (req, res) {
+    res.sendFile(__dirname + "/public/nature.html");
+    console.log("Loading Nature Page")
 });
 
 app.get("/get_all_events", function(req, res){
