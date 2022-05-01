@@ -23,27 +23,27 @@ const personSchema = {
     bio: String
 }
 
-const Person = mongoose.model('Person', personSchema);
-
-const person_csv = [];
-fs.createReadStream(__dirname +'/people_data.csv')
-    .pipe(parse())
-    .on('data', function(dataRow){
-        console.log(dataRow);
-        person_csv.push(dataRow);
-    })
-    .on('end', function(){
-        // console.log(csvData);
-        Person.insertMany(person_csv, (err)=>{
-            if(err){
-                console.log(err);
-                console.log("db error: data not saved");
-            } else {
-                console.log("all data saved");
-                // mongoose.connection.close();
-            }
-        });
-    });
+// const Person = mongoose.model('Person', personSchema);
+//
+// const person_csv = [];
+// fs.createReadStream(__dirname +'/people_data.csv')
+//     .pipe(parse())
+//     .on('data', function(dataRow){
+//         console.log(dataRow);
+//         person_csv.push(dataRow);
+//     })
+//     .on('end', function(){
+//         // console.log(csvData);
+//         Person.insertMany(person_csv, (err)=>{
+//             if(err){
+//                 console.log(err);
+//                 console.log("db error: data not saved");
+//             } else {
+//                 console.log("all data saved");
+//                 // mongoose.connection.close();
+//             }
+//         });
+//     });
 
 // const eventList = []
 
