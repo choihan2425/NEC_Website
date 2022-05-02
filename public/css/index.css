@@ -1,12 +1,14 @@
 
 :root {
     /* CSS HEX */
-    --imperial-red: #e63946ff;
+    --imperial-red: #ef233c;
     --honeydew: #f1faeeff;
     --powder-blue: #a8dadcff;
+    --darker-green: #4f772d;
     --green: #b5c99a;
     --light-green: #cfe1b9;
 }
+
 body {
     min-height: calc(100vh - 40px);
 }
@@ -24,7 +26,45 @@ body {
 
 }
 
+#banner{
+    background-color: #f1faee;
+    padding: 3px 0px;
+    margin-bottom: 1rem;
+}
+
+#banner h2{
+    font-family: 'Libre Bodoni', serif;
+    font-size: 70px;
+    color: var(--darker-green);
+}
+
+#banner h4{
+    font-family: 'Oswald', sans-serif;
+    font-size: x-large;
+}
+
+#carouselExampleCaptions{
+    width: 80%;
+    height: 100%;
+}
+#involvedImg img{
+    border-radius: 40px;
+    width: 25rem;
+    height: 25rem;
+}
+
+#getInvolved{
+    padding: 1rem 10%;
+}
+#buttons{
+    padding-top: 0.3rem;
+}
+
+#content p{
+    font-size: large;
+}
+
 .nav-item{
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 3%;
+    margin-right: 3%;
 }

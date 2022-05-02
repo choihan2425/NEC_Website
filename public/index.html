@@ -43,7 +43,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav" style="font-size: 23px; margin-left: 40px; font-family: 'Poppins', sans-serif;">
+                <ul class="navbar-nav" style="font-size: 23px; margin-left: 20px; font-family: 'Poppins', sans-serif;">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
@@ -54,18 +54,17 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="about_dropdown">
                             <li><a class="dropdown-item" href="/about_nec">About NEC</a></li>
+                            <li><a class="dropdown-item" href="/intentions">Intentions</a></li>
+                            <li><a class="dropdown-item" href="/courses">NEC Courses</a></li>
                             <li><a class="dropdown-item" href="/people">People</a></li>
                         </ul>
-
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/events">Events</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link" href="/our_work">Our Work</a>
                     </li>
-
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
                            data-bs-toggle="dropdown" aria-expanded="false">
@@ -77,13 +76,14 @@
                             <li><a class="dropdown-item" href="/readings">Readings on the Science</a></li>
                             <li><a class="dropdown-item" href="/films">Films and Recorded Talks</a></li>
                             <li><a class="dropdown-item" href="/nature">Listening in Nature <br>Exploration</a></li>
-
                         </ul>
                     </li>
-                    <li>
+                    <li style="font-size: medium">
                         <a class="nav-link active login" href="/login">Login</a>
                         <a class="nav-link active login" href="/register">Register</a>
-                        <div class="navbar-brand mb-0 logout">Hello, <a id="showname" href="/account"></a></div>
+                        <div class="navbar-brand mb-0 logout" style="font-size: medium">Hello, <a id="showname"
+                                                                                                  href="/account"></a>
+                        </div>
                         <a class="nav-link active logout" href="/logout">Log out</a>
                     </li>
                 </ul>
@@ -93,13 +93,14 @@
 </section>
 
 <div id="content">
-    <section>
+    <section id="banner">
         <div class="container my-3">
-            <div class="row">
-<h2 class="text-center">New Earth Conversation (NEC) is a campus-wide climate education initiative at Clark University, motivated
-    by the challenges of the global climate crisis.</h2>
-                <p>Through distinct practices such as Collaborative Courses, Council on the Uncertain Human Future (CUHF),
-                    Listening in Nature, and public programs, NEC offers a collective space on campus that seeks to
+            <div class="row text-center">
+                <h2>A New Earth Conversation</h2>
+                <h4>A campus-wide climate education initiative at Clark University, motivated by
+                    the challenges of the global climate crisis.</h4>
+                <p>Through distinct practices such as Collaborative Courses, Listening in Nature, and public programs,
+                    NEC offers a collective space on campus that seeks to
                     transform our learning environment at Clark.</p>
             </div>
         </div>
@@ -107,8 +108,7 @@
     </section>
     <div class="container">
         <div class="row">
-            <!--        <div class="col"></div>-->
-            <div class="col-lg-12">
+            <div class="col-lg-12 d-flex justify-content-center">
                 <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
@@ -145,7 +145,6 @@
                     </button>
                 </div>
             </div>
-            <!--        <div class="col"></div>-->
         </div>
 
         <section id="voicesNEC">
@@ -183,57 +182,46 @@
             </div>
         </section>
         <section id="getInvolved">
-            <div class="container">
-                <div class="row justify-content-md-center">
-                    <div class="col">
-                        <h2 class="text-center">Get Involved</h2>
+            <div class="row justify-content-md-center">
+                <div class="col">
+                    <h2 class="text-center">Get Involved</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 mx-auto text-center" id="buttons">
+                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                        <input type="radio" class="btn-check" name="getInvolvedRadio" id="Students" value="students"
+                               autocomplete="off" onclick="UpdateInvolved()" checked>
+                        <label class="btn btn-outline-dark" for="Students">Students</label>
+
+                        <input type="radio" class="btn-check" name="getInvolvedRadio" id="Faculty" value="faculty"
+                               autocomplete="off" onclick="UpdateInvolved()">
+                        <label class="btn btn-outline-dark" for="Faculty">Faculty</label>
+
+                        <input type="radio" class="btn-check" name="getInvolvedRadio" id="Partners" value="partners"
+                               autocomplete="off" onclick="UpdateInvolved()">
+                        <label class="btn btn-outline-dark" for="Partners">Partners</label>
                     </div>
                 </div>
+            </div>
+            <div class="row my-3 d-flex justify-content-center">
                 <div class="row">
-                    <div class="col-6 mx-auto text-center">
-                        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                            <input type="radio" class="btn-check" name="getInvolvedRadio" id="Students" value="students"
-                                   autocomplete="off" onclick="UpdateInvolved()" checked>
-                            <label class="btn btn-outline-dark" for="Students">Students</label>
-
-                            <input type="radio" class="btn-check" name="getInvolvedRadio" id="Faculty" value="faculty"
-                                   autocomplete="off" onclick="UpdateInvolved()">
-                            <label class="btn btn-outline-dark" for="Faculty">Faculty</label>
-
-                            <input type="radio" class="btn-check" name="getInvolvedRadio" id="Partners" value="partners"
-                                   autocomplete="off" onclick="UpdateInvolved()">
-                            <label class="btn btn-outline-dark" for="Partners">Partners</label>
-                        </div>
+                    <div id="involvedText" class="col-6 py-auto">
+                        <p>
+                            As a Clark student, you bring a passion for deep inquiry and thoughtful
+                            innovation to engaging the major challenges of our time. Through A new Earth
+                            conversation, we offer a space of community, creativity and reflection to fuel
+                            our work as we collectively grapple with the climate crisis.
+                        </p>
+                        <p>
+                            As you deepen into your studies here at Clark, we hope you will explore the many
+                            offerings of NEC and find inspiration in our transformative climate initiative.
+                        </p>
+                    </div>
+                    <div id="involvedImg" class="col-6 d-flex justify-content-center">
+                        <img class="img-fluid" src="img/home/getInvolvedStudents.jpg">
                     </div>
                 </div>
-                <div class="row my-3">
-                    <div class="col"></div>
-                    <div class="col-10">
-                        <div class="container">
-                            <div class="row">
-                                <div id="involvedText" class="col-5 py-auto">
-                                    <p>
-                                        As a Clark student, you bring a passion for deep inquiry and thoughtful
-                                        innovation to engaging the major challenges of our time. Through A new Earth
-                                        conversation, we offer a space of community, creativity and reflection to fuel
-                                        our work as we collectively grapple with the climate crisis.
-                                    </p>
-                                    <p>
-                                        As you deepen into your studies here at Clark, we hope you will explore the many
-                                        offerings of NEC and find inspiration in our transformative climate initiative.
-                                    </p>
-                                </div>
-                                <div id="involvedImg" class="col-7">
-                                    <img class="img-fluid" src="img/home/getInvolvedStudents.jpg">
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col"></div>
-                </div>
-
             </div>
         </section>
     </div>
@@ -270,7 +258,9 @@
                 ><i class="fa-brands fa-facebook"></i></a>
             </section>
         </div>
-        <a style="text-decoration: none; font-family: 'PT Serif', serif; font-size: medium;" class="text-white" href="https://newearthconversation.us17.list-manage.com/subscribe?u=625995360e925ce8132137949&id=6d00fffb54"> Subscribe to our Newsletter!</a>
+        <a style="text-decoration: none; font-family: 'PT Serif', serif; font-size: medium;" class="text-white"
+           href="https://newearthconversation.us17.list-manage.com/subscribe?u=625995360e925ce8132137949&id=6d00fffb54">
+            Subscribe to our Newsletter!</a>
     </footer>
 </section>
 </body>
