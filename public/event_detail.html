@@ -96,27 +96,28 @@
 
 <!--Body-->
 <section class="container" id="event_info"> <!--    Fill this out-->
-    <div class="row">
-        <img id="event_img" src="">
-    </div>
-    <div class="row">
-        <div class="col-5">Event Title: </div>
-        <div class="col-7" id="event_title"></div>
-    </div>
-    <div class="row">
-        <div class="col-5">Date: </div>
-        <div class="col-7" id="event_date"></div>
-    </div>
-    <div class="row">
-        <div class="col-5">Overview: </div>
-        <div class="col-7" id="event_overview"></div>
-    </div>
-</section>
-<div>
-    <a class="btn btn-lg btn-primary" href="events.html" id="back_button">Back</a>
-    <button class="btn btn-lg btn-primary" onclick="onLikeEvent()">Interested!</button>
 
-</div>
+    <div class="row">
+        <div class=" imgDiv col-lg-4 col-md-6 col-sm-12">
+            <img id="event_img" src="">
+        </div>
+        <div class=" descriptionDiv col-lg-8 col-md-6 col-sm-12">
+            <div class="row event-title">
+                <h3 id="event_title"></h3>
+            </div>
+            <div class="row event-description">
+                <div><strong>Date:</strong>&nbsp;<span id="event_date"></span></div>
+                <div><strong>Overview:</strong>&nbsp;<span id="event_overview"></span></div>
+            </div>
+        </div>
+        <div class="buttons">
+            <a class="btn btn-lg btn-primary" href="events.html" id="back_button">Back</a>
+            <button class="btn btn-lg btn-primary" onclick="onLikeEvent()">Interested!</button>
+        </div>
+    </div>
+
+</section>
+
 
 <!--Footer-->
 <section id="footer">
@@ -136,7 +137,7 @@
             <p style="font-size: large"><em>A New Earth Conversation&nbsp;</em>
                 is funded through the generous support of the Christopher Reynolds Foundation.</p>
         </div>
-        <div class="container " >
+        <div class="container ">
             <!-- Section: Social media -->
             <section class="snsDiv">
                 <!-- Instagram -->
