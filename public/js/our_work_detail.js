@@ -4,8 +4,8 @@ let work = {
 }
 
 function load_work(work){
-    $('#img').attr('src', "img/about/people/" + work.img);
-    $('#description').text(work.description);
+    $('#img').attr('src', "img/about/work/" + work.img);
+    $('#description').text(work.description.slice(0,1000));
 }
 
 const queryString = window.location.search;

@@ -1,7 +1,7 @@
 function get_work_object(work) {
     return `<div class="work" data-w="${work._id}">
                 <div class="col-3">
-                    <img src="img/about/work/${work.img}" alt="" style="width: 60%">
+                    <img src="img/about/work/${work.img}" alt="" style="width: 100%">
                 </div>
                 <div class="col-9">
                     <h4>${work.title}</h4>
