@@ -78,6 +78,14 @@ const workSchema = {
 
 const Work = mongoose.model('Work', workSchema);
 
+const networkSchema = {
+    title:String,
+    url:String,
+    overview:String
+}
+
+const Network=mongoose.model('Network', networkSchema)
+
 app.listen(3000, function () {
     console.log("server started at 3000");
 });
@@ -304,3 +312,18 @@ app.get('/get_work_by_id', function (req, res) {
     });
 });
 
+app.get("/get_all_networks", function (req, res) {
+    Network.find((err,data)=>{
+        if(err){
+            res.send({
+                "message":"database error!",
+                "data":[]
+            })
+        } else{
+            res.send({
+                "message":"success",
+                "data":data
+            });
+        }
+    });
+});

@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const parse = require('csv-parser');
 const fs = require('fs');
+const networkData = fs.readFileSync(__dirname + "/networks.json");
+const networkJSON = JSON.parse(networkData)
 
 mongoose.connect('mongodb://127.0.0.1:27017/necDB',
     {useNewUrlParser: true}, function () {
@@ -34,6 +36,14 @@ const workSchema = {
 }
 
 const Work = mongoose.model('Work', workSchema);
+
+const networkSchema = {
+    title:String,
+    url:String,
+    overview:String
+}
+
+const Network=mongoose.model('Network', networkSchema)
 
 const work_csv = [];
 fs.createReadStream(__dirname +'/work_data.csv')
@@ -89,7 +99,27 @@ fs.createReadStream(__dirname +'/data_events.csv')
                 console.log("db error: data not saved");
             } else {
                 console.log("all data saved");
-                mongoose.connection.close();
             }
         });
     });
+
+const networkList =[]
+networkJSON.forEach((resource)=>{
+    networkList.push({
+            "title":resource['title'],
+            "url":resource['url'],
+            "overview":resource['overview']
+        }
+    )
+});
+
+Network.insertMany(networkList, (err)=>{
+    if(err){
+        console.log("data insertion failed!")
+        console.log(err)
+    }else{
+        console.log("All data loaded")
+        console.log()
+        mongoose.connection.close(); // need to close connection after successful insert
+    }
+});
