@@ -4,6 +4,7 @@ function UpdateInvolved() {
     const checked = $("input:checked").val();
     console.log(checked)
     $("#involvedText").empty()
+    $("#involvedImg").empty()
     fillInfo(checked)
 
 
@@ -11,6 +12,7 @@ function UpdateInvolved() {
 
 function fillInfo(choice) {
     if (choice === "students") {
+        $("#involvedImg").append("<img class=\"img-fluid\" src=\"img/home/getInvolvedStudents.jpg\">")
         $("#involvedText").append("<p>\n" +
             "                As a Clark student, you bring a passion for deep inquiry and thoughtful\n" +
             "                innovation to engaging the major challenges of our time. Through A new Earth\n" +
@@ -23,6 +25,8 @@ function fillInfo(choice) {
             "            </p>"
         )
     } else if (choice === "faculty") {
+        $("#involvedImg").append("<img class=\"img-fluid\" src=\"img/home/getInvolvedFaculty.jpg\">")
+
         $("#involvedText").append("<p>\n" +
             "A new Earth conversation grew out of deep faculty engagement, which is still its foundation.\n" +
             " As this initiative evolves and spreads across campus, we invite you to join us to explore how\n" +
@@ -34,6 +38,8 @@ function fillInfo(choice) {
             "</p>")
 
     } else if (choice === "partners") {
+        $("#involvedImg").append("<img class=\"img-fluid\" src=\"img/home/getInvolvedPartners.jpg\">")
+
         $("#involvedText").append("<p>At Clark University, our work through NEC has grown out of deep faculty\n" +
             " dialogue and years of intentional relationship building within our academic community. We\n" +
             " see it as critical to all of our work in higher education in this unprecedented time.\n" +
