@@ -40,6 +40,12 @@ const userSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
+        likes: [
+            {
+                title: String,
+                date: String,
+            }
+        ]
     }
 )
 userSchema.plugin(passportLocalMongoose);
@@ -67,10 +73,10 @@ const Person = mongoose.model('Person', personSchema);
 const workSchema = {
     title: String,
     description: String,
-    img:{
+    img: {
         type: Array
     },
-    bios:{
+    bios: {
         type: Array
     },
     video: String
@@ -79,12 +85,12 @@ const workSchema = {
 const Work = mongoose.model('Work', workSchema);
 
 const networkSchema = {
-    title:String,
-    url:String,
-    overview:String
+    title: String,
+    url: String,
+    overview: String
 }
 
-const Network=mongoose.model('Network', networkSchema)
+const Network = mongoose.model('Network', networkSchema)
 
 app.listen(3000, function () {
     console.log("server started at 3000");
@@ -213,7 +219,7 @@ app.get("/our_work", function (req, res) {
     console.log("Loading Our Work Page")
 })
 
-app.get("/get_all_events", function(req, res){
+app.get("/get_all_events", function (req, res) {
     Event.find(function (err, data) {
         if (err) {
             res.send({
@@ -230,21 +236,21 @@ app.get("/get_all_events", function(req, res){
 });
 
 app.get('/get_event_by_id', function (req, res) {
-        // console.log(req.query.movie_id);
-        Event.find({"_id": req.query.event_id}, function (err, data) {
-            if (err || data.length === 0) {
-                res.send({
-                    "message": "internal database error",
-                    "data": {}
-                });
-            } else {
-                res.send({
-                    "message": "success",
-                    "data": data[0]
-                })
-            }
-        });
+    // console.log(req.query.movie_id);
+    Event.find({"_id": req.query.event_id}, function (err, data) {
+        if (err || data.length === 0) {
+            res.send({
+                "message": "internal database error",
+                "data": {}
+            });
+        } else {
+            res.send({
+                "message": "success",
+                "data": data[0]
+            })
+        }
     });
+});
 
 app.get('/get_all_people', function (req, res) {
     Person.find(function (err, data) {
@@ -313,17 +319,69 @@ app.get('/get_work_by_id', function (req, res) {
 });
 
 app.get("/get_all_networks", function (req, res) {
-    Network.find((err,data)=>{
-        if(err){
+    Network.find((err, data) => {
+        if (err) {
             res.send({
-                "message":"database error!",
-                "data":[]
+                "message": "database error!",
+                "data": []
             })
-        } else{
+        } else {
             res.send({
-                "message":"success",
-                "data":data
+                "message": "success",
+                "data": data
             });
         }
     });
+});
+
+app.get('/account', (req, res) => {
+    if (req.isAuthenticated()) {
+        res.sendFile(__dirname + "/src/account.html");
+    } else {
+        res.redirect("/login");
+    }
+});
+
+app.post('/like_event', (req, res) => {
+    //Users need to login to like a car
+    console.log(req.body)
+    if (req.isAuthenticated()) {
+        // save the car to the user
+        const uname = req.user.username
+        const event = {
+            title: req.body.title,
+            date: req.body.date,
+        }
+        console.log(req.user)
+        console.log(event)
+        User.updateOne(
+            {
+                username: uname,
+                'likes.title':{$ne:event.title}
+            },
+            {
+                $push: {
+                    likes: event
+                }
+            },
+            {},
+            (err) => {
+                if (err) {
+                    res.send({
+                        message: "database error"
+                    })
+                } else {
+                    res.send({
+                        message: "success"
+                    })
+                }
+            }
+        )
+    } else {
+        // navigate to the login page
+        res.send({
+            message: "login required",
+            redr: "/login",
+        })
+    }
 });

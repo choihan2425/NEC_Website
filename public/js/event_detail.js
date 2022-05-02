@@ -5,7 +5,7 @@ let event = {
     "overview": "overview placeholder"
 }
 
-function load_event(event){
+function load_event(event) {
     $('#event_img').attr('src', "img/events/" + event.path);
     $('#event_title').text(event.title);
     $('#event_date').text(event.date);
@@ -30,3 +30,26 @@ $(document).ready(function () {
     }
 
 });
+
+function onLikeEvent() {
+    // console.log(stock_num)
+
+
+    //year make model color price
+    let current = {
+        "title": event.title,
+        "date": event.date,
+    }
+    console.log(current)
+    $.post('/like_event', current).done((data) => {
+        // we post the movie id to the backend and we receive info back in the form of (data)
+        if (data.message === "success") {
+            location.reload();
+        } else {
+            location.href = data.redr;
+        }
+    });
+
+    // console.log(car.stock_num)
+
+}
