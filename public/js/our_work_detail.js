@@ -1,5 +1,6 @@
 let work = {
     "img": "img",
+    "title": "title",
     "description": "description",
     "video": "video",
     "bios": "bios"
@@ -7,16 +8,17 @@ let work = {
 
 function load_work(work){
     $('#img').attr('src', "img/about/work/" + work.img);
+    $('#title').text(work.title);
     $('#description').text(work.description.slice(0,1000));
     console.log(String(work.bios))
-    if (String(work.video)) {
+    if (work.video) {
         $("#video").attr('href', work.video);
         $("#video").text("VIDEO");
-        $("#line_video").remove();
+        $("#video").before("<hr style='margin: 10px'>")
     }
     if (String(work.bios)) {
         $("#bios").text(work.bios);
-        $("#line_bios").remove();
+        $("#bios").before("<hr style='margin: 10px'>")
     }
 }
 
