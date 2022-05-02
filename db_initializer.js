@@ -27,6 +27,16 @@ const personSchema = {
 
 const Person = mongoose.model('Person', personSchema);
 
+const courseSchema = {
+    code: String,
+    title: String,
+    instructor: String,
+    period:String,
+    description: String,
+    type:String
+}
+const Course = mongoose.model('Course', courseSchema);
+
 const workSchema = {
     title: String,
     description: String,
@@ -84,6 +94,25 @@ fs.createReadStream(__dirname +'/people_data.csv')
     });
 
 // read the csv file and save the info into the list
+const course_csv =[];
+fs.createReadStream(__dirname +'/courses_data.csv')
+    .pipe(parse())
+    .on('data', function(dataRow){
+        console.log(dataRow);
+        course_csv.push(dataRow);
+    })
+    .on('end', function(){
+        Course.insertMany(course_csv, (err)=>{
+            if(err){
+                console.log(err);
+                console.log("db error: data not saved");
+            } else {
+                console.log("all data saved");
+                // mongoose.connection.close();
+            }
+        });
+    });
+
 const csvData =[];
 fs.createReadStream(__dirname +'/data_events.csv')
     .pipe(parse())

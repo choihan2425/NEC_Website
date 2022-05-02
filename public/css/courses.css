@@ -1,0 +1,58 @@
+:root {
+    /* CSS HEX */
+    --imperial-red: #ef233c;
+    --honeydew: #f1faeeff;
+    --powder-blue: #a8dadcff;
+    --darker-green: #4f772d;
+    --green: #b5c99a;
+    --light-green: #cfe1b9;
+}
+
+#content_title {
+    font-family: 'Libre Bodoni', serif;
+    font-size: 70px;
+    margin-left: 4%;
+    color: var(--darker-green);
+}
+
+#content_body p, ul, #content_body a{
+    font-size: large;
+}
+
+#content_body h3{
+    font-size:xx-large;
+}
+#content_body{
+    padding: 0px 100px;
+
+}
+
+.accordion-body{
+    font-size: medium;
+}
+
+.accordion-button{
+    border-radius: 5px;
+}
+
+.accordion-button:not(.collapsed) {
+    color: black !important;
+    background-color: var(--light-green) !important;
+}
+
+#currCourses{
+    margin-bottom: 1rem;
+}
+
+.accordion-body h4 {
+    color: var(--darker-green);
+}
+
+.collaborative{
+    margin-bottom: 0.5rem;
+}
+
+.nav-item{
+    margin-left: 3%;
+    margin-right: 3%;
+}

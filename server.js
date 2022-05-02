@@ -61,6 +61,17 @@ const eventSchema = {
 }
 const Event = mongoose.model('Event', eventSchema);
 
+const courseSchema = {
+    code: String,
+    title: String,
+    instructor: String,
+    period: String,
+    description: String,
+    type: String
+}
+
+const Course = mongoose.model('Course', courseSchema);
+
 const personSchema = {
     name: String,
     img: String,
@@ -214,10 +225,20 @@ app.get("/nature", function (req, res) {
     console.log("Loading Nature Page")
 });
 
+app.get("/intentions", function (req, res) {
+    res.sendFile(__dirname + "/public/intentions.html");
+    console.log("Loading Intentions Page")
+});
+
 app.get("/our_work", function (req, res) {
     res.sendFile(__dirname + "/public/our_work.html");
     console.log("Loading Our Work Page")
 })
+
+app.get("/courses", function (req, res) {
+    res.sendFile(__dirname + "/public/courses.html");
+    console.log("Loading NEC Courses Page")
+});
 
 app.get("/get_all_events", function (req, res) {
     Event.find(function (err, data) {
@@ -385,3 +406,36 @@ app.post('/like_event', (req, res) => {
         })
     }
 });
+
+
+app.get('/get_current_courses', function (req, res) {
+    Course.find({period: {$regex: 's22'}},function (err, data) {
+        if (err) {
+            res.send({
+                "message": "internal database error",
+                "data": []
+            });
+        } else {
+            res.send({
+                "message": "success",
+                "data": data
+            })
+        }
+    })
+})
+
+app.get('/get_past_courses', function (req, res) {
+    Course.find({period: {$ne: 's22'}},function (err, data) {
+        if (err) {
+            res.send({
+                "message": "internal database error",
+                "data": []
+            });
+        } else {
+            res.send({
+                "message": "success",
+                "data": data
+            })
+        }
+    })
+})

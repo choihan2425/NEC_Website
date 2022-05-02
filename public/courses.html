@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Earth Conversation</title>
+
+    <link rel="stylesheet" href="css/courses.css">
+
+    <!--    Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+            crossorigin="anonymous"></script>
+
+    <!--    jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!--    Datepicker-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+    <!--    Font Awesome Resources-->
+    <script src="https://kit.fontawesome.com/6249be3df6.js" crossorigin="anonymous"></script>
+
+    <!--    Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@1,700&family=Oswald:wght@500&family=PT+
+    Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+    <script src="js/courses.js" defer></script>
+
+</head>
+<body>
+<!--    Header-->
+<section id="navigationBar" style="margin-bottom: 10px;">
+    <nav class="navbar navbar-expand-lg navbar-light nav-custom">
+        <div class="container-fluid" style="padding-left: 8%; padding-right: 8%">
+            <a class="navbar-brand" href="/" style="font-size: large; font-family: 'Oswald', sans-serif;">
+                <h1>New Earth Conversation </h1>
+                <h3> at Clark University</h3></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"
+                    style="color:black;">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav" style="font-size: 23px; margin-left: 20px; font-family: 'Poppins', sans-serif;">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="about_dropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            About
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="about_dropdown">
+                            <li><a class="dropdown-item" href="/about_nec">About NEC</a></li>
+                            <li><a class="dropdown-item" href="/intentions">Intentions</a></li>
+                            <li><a class="dropdown-item" href="/courses">NEC Courses</a></li>
+                            <li><a class="dropdown-item" href="/people">People</a></li>
+                        </ul>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/events">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/our_work">Our Work</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Resources
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="/network">Network & Initiatives</a></li>
+                            <li><a class="dropdown-item" href="newsletter">NEC Newsletters</a></li>
+                            <li><a class="dropdown-item" href="/readings">Readings on the Science</a></li>
+                            <li><a class="dropdown-item" href="/films">Films and Recorded Talks</a></li>
+                            <li><a class="dropdown-item" href="/nature">Listening in Nature <br>Exploration</a></li>
+                        </ul>
+                    </li>
+                    <li style="font-size: medium">
+                        <a class="nav-link active login" href="/login">Login</a>
+                        <a class="nav-link active login" href="/register">Register</a>
+                        <div class="navbar-brand mb-0 logout">Hello, <a id="showname" href="/account"></a></div>
+                        <a class="nav-link active logout" href="/logout">Log out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</section>
+
+<section class="container" id="content">
+    <h1 id="content_title">NEC Courses</h1>
+    <div id="content_body">
+        <p>
+            Course experiences connected to A new Earth conversation create a distinctive space of student inquiry and
+            engagement at Clark. While grappling with the challenges posed by climate change, students in Collaborative
+            and Affiliated courses are able to deepen their collective insight and understanding, creating the
+            possibility of collaboration and action.
+        </p>
+        <!--    Current Courses Accordian -->
+        <div id="currCourses">
+            <h3>Collaboratives, Spring 2022</h3>
+            <p>
+                Collaboratives embody a fundamental process of the NEC. Collaborative students start the semester by
+                meeting together in the Council on the Uncertain Human Future. From this foundation, they go on to
+                consider the topic issue of the Collaborative, allowing the concerns and questions of the group to
+                emerge. Through deep dialogue and inquiry, these interdisciplinary courses cultivate creative exchange
+                on campus through horizontal relationship building between faculty and students, and a process of
+                collective knowledge production.
+            </p>
+            <div id="currColCourses" class="accordion accordion-flush" >
+                <!--    Adding Courses item here-->
+            </div>
+            <br>
+            <h3>Affiliated Courses, Spring 2022</h3>
+            <p>
+                Affiliated Courses provide another interdisciplinary opportunity for students to engage in reflection on
+                the climate crisis. While more traditional in their structure, these courses may integrate Listening in
+                Nature experiences, NEC programs, and the Council on the Uncertain Human Future as part of their offerings.
+            </p>
+            <div id="currAffCourses">
+                <p>A full list of Affiliated courses will be posted soon.</p>
+            </div>
+        </div>
+
+        <div id="pastCourses">
+            <h3>Past Courses</h3>
+            <div id="pastCourses_accordion" class="accordion accordion-flush">
+                <div class="accordion-item" id="f21">
+                    <h2 class="accordion-header" >
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseF21" aria-expanded="false" aria-controls="flush-collapseF21">
+                            Fall 2021
+                        </button>
+                    </h2>
+                    <div id="flush-collapseF21" class="accordion-collapse collapse" aria-labelledby="f21" data-bs-parent="#pastCourses">
+                        <div class="accordion-body">
+                            <h4>Collaborative Courses</h4>
+                            <div class="collaborative"></div>
+                            <h4>Affiliate Courses</h4>
+                            <div class="affiliate"></div>
+                            <!--                            Add code here-->
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item" id="s21">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseS21"
+                                aria-expanded="false" aria-controls="flush-collapseS21">
+                            Spring 2021
+                        </button>
+                    </h2>
+                    <div id="flush-collapseS21" class="accordion-collapse collapse" aria-labelledby="s21" data-bs-parent="#pastCourses">
+                        <div class="accordion-body">
+                            <h4>Collaborative Courses</h4>
+                            <div class="collaborative"></div>
+                            <h4>Affiliate Courses</h4>
+                            <div class="affiliate"></div>
+                            <!--                            Add code here-->
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item" id="f20">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseF20" aria-expanded="false" aria-controls="flush-collapseF20">
+                            Fall 2020
+                        </button>
+                    </h2>
+                    <div id="flush-collapseF20" class="accordion-collapse collapse" aria-labelledby="f20" data-bs-parent="#pastCourses">
+                        <div class="accordion-body">
+                            <h4>Collaborative Courses</h4>
+                            <div class="collaborative"></div>
+                            <h4>Affiliate Courses</h4>
+                            <div class="affiliate"></div>
+                            <!--                            Add code here-->
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item" id="s20">
+                    <h2 class="accordion-header" >
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseS20" aria-expanded="false" aria-controls="flush-collapseS20">
+                            Spring 2020
+                        </button>
+                    </h2>
+                    <div id="flush-collapseS20" class="accordion-collapse collapse" aria-labelledby="f21" data-bs-parent="#pastCourses">
+                        <div class="accordion-body">
+                            <h4>Collaborative Courses</h4>
+                            <div class="collaborative"></div>
+                            <h4>Affiliate Courses</h4>
+                            <div class="affiliate"></div>
+                            <!--                            Add code here-->
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item" id="f19">
+                    <h2 class="accordion-header" >
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseF19" aria-expanded="false" aria-controls="flush-collapseF19">
+                            Fall 2019
+                        </button>
+                    </h2>
+                    <div id="flush-collapseF19" class="accordion-collapse collapse" aria-labelledby="f19" data-bs-parent="#pastCourses">
+                        <div class="accordion-body">
+                            <h4>Collaborative Courses</h4>
+                            <div class="collaborative"></div>
+                            <h4>Affiliate Courses</h4>
+                            <div class="affiliate"></div>
+                            <!--                            Add code here-->
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item" id="s19">
+                    <h2 class="accordion-header" >
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseS19" aria-expanded="false" aria-controls="flush-collapseS19">
+                            Spring 2019
+                        </button>
+                    </h2>
+                    <div id="flush-collapseS19" class="accordion-collapse collapse" aria-labelledby="s19" data-bs-parent="#pastCourses">
+                        <div class="accordion-body">
+                            <h4>Collaborative Courses</h4>
+                            <div class="collaborative"></div>
+                            <h4>Affiliate Courses</h4>
+                            <div class="affiliate"></div>
+                            <!--                            Add code here-->
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item" id="f18">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseF18" aria-expanded="false" aria-controls="flush-collapseF18">
+                            Fall 2018
+                        </button>
+                    </h2>
+                    <div id="flush-collapseF18" class="accordion-collapse collapse" aria-labelledby="f18" data-bs-parent="#pastCourses">
+                        <div class="accordion-body">
+                            <h4>Collaborative Courses</h4>
+                            <div class="collaborative"></div>
+                            <h4>Affiliate Courses</h4>
+                            <div class="affiliate"></div>
+                            <!--                            Add code here-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+
+    </div>
+</section>
+
+<!--Footer-->
+<section id="footer">
+    <footer class="bg-dark text-center text-white">
+        <div class="logoDiv" style="margin-top: 5%;">
+            <a href="https://www.clarku.edu/schools/idce/">
+                <img src="img/header_footer/Clark.png" style="margin-top: 15px; margin-bottom: 10px;">
+            </a>
+        </div>
+        <div class="addressDiv" style=" font-family: 'PT Serif', serif; font-size: medium;">
+            <p>950 Main St., Worcester, MA 01610</p>
+        </div>
+        <div class="descriptionDiv d-flex justify-content-center"
+             style="margin-right: 10%; margin-left: 10%; margin-top: 10px;
+                    font-family: 'PT Serif', serif;
+                    font-size: medium;">
+            <p style="font-size: large"><em>A New Earth Conversation&nbsp;</em>
+                is funded through the generous support of the Christopher Reynolds Foundation.</p>
+        </div>
+        <div class="container ">
+            <!-- Section: Social media -->
+            <section class="snsDiv">
+                <!-- Instagram -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/clarknec/"
+                   role="button"
+                ><i class="fa-brands fa-instagram"></i></a>
+
+                <!-- facebook -->
+                <a class="btn btn-outline-light btn-floating m-1"
+                   href="https://www.facebook.com/A-New-Earth-Conversation-1138118049600755/" role="button"
+                ><i class="fa-brands fa-facebook"></i></a>
+            </section>
+        </div>
+    </footer>
+</section>
+</body>
+</html>

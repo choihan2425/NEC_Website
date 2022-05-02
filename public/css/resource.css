@@ -1,0 +1,21 @@
+:root {
+    /* CSS HEX */
+    --baige: #faf4ea;
+    --imperial-red: #ef233c;
+    --honeydew: #f1faeeff;
+    --powder-blue: #a8dadcff;
+    --leaf: #6b705c;
+    --darker-green: #4f772d;
+    --green: #b5c99a;
+    --light-green: #cfe1b9;
+}
+
+.header {
+    font-family: 'Libre Bodoni', serif;
+    font-size: 70px;
+    color: var(--darker-green);
+}
+.nav-item{
+    margin-left: 3%;
+    margin-right: 3%;
+}

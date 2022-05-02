@@ -1,0 +1,49 @@
+:root {
+    /* CSS HEX */
+    --baige: #faf4ea;
+    --imperial-red: #ef233c;
+    --honeydew: #f1faeeff;
+    --powder-blue: #a8dadcff;
+    --leaf: #6b705c;
+    --darker-green: #4f772d;
+    --green: #b5c99a;
+    --light-green: #cfe1b9;
+}
+
+
+#content_title {
+    font-family: 'Libre Bodoni', serif;
+    font-size: 70px;
+    margin-left: 4%;
+    color: var(--darker-green);
+}
+#content_body p, ul, #content_body a{
+    font-size: large;
+}
+
+#content_body h3{
+    font-size:xx-large;
+}
+#content_body{
+    padding: 0px 100px;
+
+}
+
+#content_body img{
+    display: block;
+    width: 32rem;
+    height: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.element{
+    border-radius: 15px 50px;
+    margin:2rem 0.5rem;
+    padding: 1rem;
+    background-color: var(--baige);
+}
+
+.nav-item{
+    margin-left: 3%;
+    margin-right: 3%;
+}
