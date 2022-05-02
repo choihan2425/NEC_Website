@@ -1,11 +1,23 @@
 let work = {
     "img": "img",
-    "description": "description"
+    "description": "description",
+    "video": "video",
+    "bios": "bios"
 }
 
 function load_work(work){
     $('#img').attr('src', "img/about/work/" + work.img);
     $('#description').text(work.description.slice(0,1000));
+    console.log(String(work.bios))
+    if (String(work.video)) {
+        $("#video").attr('href', work.video);
+        $("#video").text("VIDEO");
+        $("#line_video").remove();
+    }
+    if (String(work.bios)) {
+        $("#bios").text(work.bios);
+        $("#line_bios").remove();
+    }
 }
 
 const queryString = window.location.search;
