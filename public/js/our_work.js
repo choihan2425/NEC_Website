@@ -78,3 +78,16 @@ function showReaders(readers) {
         location.href = "our_work_detail.html?work_id=" + work_id;
     });
 }
+
+$(document).ready(()=>{
+    $.getJSON('/get_current_user').done((data)=>{
+        if(data.message === "success"){
+            const user=data.data;
+            $('.login').remove();
+            $('#showname').text(user.fullname);
+            console.log(user)
+        } else{
+            $('.logout').remove();
+        }
+    })
+})
