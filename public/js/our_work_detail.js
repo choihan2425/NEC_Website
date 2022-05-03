@@ -14,11 +14,11 @@ function load_work(work){
     if (work.video) {
         $("#video").attr('href', work.video);
         $("#video").text("VIDEO");
-        $("#video").before("<hr style='margin: 10px'>")
+        $("#video").before("<hr style='margin: 10px; color: var(--darker-green);'>")
     }
     if (String(work.bios)) {
         $("#bios").text(work.bios);
-        $("#bios").before("<hr style='margin: 10px'>")
+        $("#bios").before("<hr style='margin: 10px; color: var(--darker-green);'>")
     }
 }
 

@@ -6,7 +6,7 @@ function get_work_object(work) {
                 <div class="col-9">
                     <h4>${work.title}</h4>
                     <p>${work.description.slice(0, 500)}...</p>
-                    <button type="button" class="learn_more_btn" value='${JSON.stringify(work)}'>Learn more</button>
+                    <button type="button" class="btn btn-light detail-btn learn_more_btn" value='${JSON.stringify(work)}' style="background-color: #b5c99a; font-size: 17px; margin-bottom: 10px">Learn more</button>
                 </div>
             </div>`
 }
