@@ -27,8 +27,9 @@
     <!--    Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@300&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@1,700&family=Oswald:wght@500&family=PT+
+    Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@300&display=swap" rel="stylesheet">
+
 
     <!--    JS-->
     <script src="js/people.js" defer></script>
@@ -99,20 +100,26 @@
 
 
 <div class="container">
-    <h1 id="people_header">People</h1>
-    <img src="img/about/people/NEC-People-Page.jpg" alt="" style="width: 60%">
-
-    <h3>NEC Staff</h3>
-    <div class="row" id="staff" style="border: 1px black solid"></div>
-
-    <h3>NEC Core Advisory Team</h3>
-    <div class="row" id="advisory_team" style="border: 1px black solid"></div>
-
-    <h3>Advisory Board</h3>
-    <div class="row" id="advisory_board" style="border: 1px black solid"></div>
-
-    <h3>NEC Student Fellows</h3>
-    <div class="row" id="student_fellows" style="border: 1px black solid"></div>
+    <h1 id="people_header">NEC People</h1>
+<!--    <img id="people_banner_img" src="img/about/people/NEC-People-Page.jpg" alt="" style="width: 60%">-->
+    <div id="content_body" class="container">
+        <div class="team-group">
+            <h3>NEC Staff</h3>
+            <div class="row" id="staff"></div>
+        </div>
+        <div class="team-group">
+            <h3>NEC Core Advisory Team</h3>
+            <div class="row" id="advisory_team"></div>
+        </div>
+        <div class="team-group">
+            <h3>Advisory Board</h3>
+            <div class="row" id="advisory_board" ></div>
+        </div>
+        <div class="team-group">
+            <h3>NEC Student Fellows</h3>
+            <div class="row" id="student_fellows"></div>
+        </div>
+    </div>
 </div>
 
 
