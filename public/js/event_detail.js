@@ -55,7 +55,7 @@ function onLikeEvent() {
     $.post('/like_event', current).done((data) => {
         // we post the movie id to the backend and we receive info back in the form of (data)
         if (data.message === "success") {
-            location.reload();
+            location.href = data.redr;
         } else {
             location.href = data.redr;
         }

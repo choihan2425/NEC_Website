@@ -378,7 +378,7 @@ app.post('/like_event', (req, res) => {
         User.updateOne(
             {
                 username: uname,
-                'likes.title':{$ne:event.title}
+                'likes.date':{$ne:event.date}
             },
             {
                 $push: {
@@ -393,7 +393,9 @@ app.post('/like_event', (req, res) => {
                     })
                 } else {
                     res.send({
-                        message: "success"
+                        message: "success",
+                        redr: "/account",
+
                     })
                 }
             }
