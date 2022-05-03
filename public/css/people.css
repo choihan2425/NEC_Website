@@ -12,3 +12,8 @@
     font-family: 'Libre Bodoni', serif;
     color: var(--darker-green);
 }
+
+.nav-item{
+    margin-left: 5%;
+    margin-right: 5%;
+}
