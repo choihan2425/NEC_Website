@@ -130,7 +130,7 @@ app.get('/register', (req, res) => {
     if (req.query.error) {
         res.redirect("/register.html?error=" + req.query.error);
     } else {
-        res.redirect("/register.html");
+        res.sendFile(__dirname + "/public/register.html");
     }
 });
 
@@ -158,7 +158,7 @@ app.get('/login', (req, res) => {
     if (req.query.error) {
         res.redirect("/login.html?error=" + req.query.error);
     } else {
-        res.redirect("/login.html");
+        res.sendFile(__dirname + "/public/login.html");
     }
 });
 
