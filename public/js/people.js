@@ -3,7 +3,7 @@ function get_person_object(person) {
                 <img src="img/about/people/${person.img}" alt="" style="width: 60%">
                 <h6>${person.name}</h6>
                 <p>${person.role}</p>
-                <button type="button" class="show_more_btn" value='${JSON.stringify(person)}'>Show more</button>
+                <button type="button" class="btn btn-light detail-btn show_more_btn" value='${JSON.stringify(person)}' style="background-color: #b5c99a; font-size: 17px">Show more</button>
             </div>`
 }
 
