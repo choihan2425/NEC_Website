@@ -6,9 +6,26 @@
     --darker-green: #4f772d;
     --green: #b5c99a;
     --light-green: #cfe1b9;
+    --brown: #b08968;
 }
 
-h2 {
+#title {
     font-family: 'Libre Bodoni', serif;
+    font-size: xx-large;
     color: var(--darker-green);
+}
+
+#back_button{
+    margin-top: 1rem;
+    background-color: var(--brown);
+    border-color: var(--brown);
+}
+
+#description, #bios {
+    font-size: large;
+}
+
+.row img{
+    width: 50%;
+    margin-bottom: 1rem;
 }

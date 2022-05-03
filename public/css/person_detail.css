@@ -1,0 +1,36 @@
+:root {
+    /* CSS HEX */
+    --imperial-red: #ef233c;
+    --honeydew: #f1faeeff;
+    --powder-blue: #a8dadcff;
+    --leaf: #6b705c;
+    --darker-green: #4f772d;
+    --green: #b5c99a;
+    --light-green: #cfe1b9;
+}
+
+#img{
+    width: 20rem;
+    height: 20rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+}
+
+#role, #bio{
+    margin-bottom: 0.4rem;
+    font-size: large;
+}
+#role{
+    font-size: x-large;
+    font-style: italic;
+}
+
+#back_button{
+    background-color: var(--green);
+    font-size: 17px;
+    margin-bottom: 10px;
+    margin-top: 3rem;
+
+}

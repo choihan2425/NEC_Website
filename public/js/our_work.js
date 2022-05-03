@@ -1,13 +1,21 @@
 function get_work_object(work) {
-    return `<div class="work" data-w="${work._id}">
+    return `<div class="row work" data-w="${work._id}">
                 <div class="col-3">
                     <img src="img/about/work/${work.img}" alt="" style="width: 100%">
                 </div>
                 <div class="col-9">
                     <h4>${work.title}</h4>
                     <p>${work.description.slice(0, 500)}...</p>
-                    <button type="button" class="btn btn-light detail-btn learn_more_btn" value='${JSON.stringify(work)}' style="background-color: #b5c99a; font-size: 17px; margin-bottom: 10px">Learn more</button>
+                    <button type="button" class="btn btn-light detail-btn learn_more_btn" value='${JSON.stringify(work)}' style="background-color: #b08968; font-size: 17px; margin-bottom: 10px">Learn more</button>
                 </div>
+            </div>`
+}
+
+function get_public_object(work) {
+    return `<div class="row work" data-w="${work._id}">
+                <h4>${work.title}</h4>
+                <p>${work.description.slice(0, 500)}...</p>
+                <button type="button" class="btn btn-light public-detail-btn learn_more_btn" value='${JSON.stringify(work)}' style="background-color: #b08968; width: 7rem; font-size: 17px; margin-left: 10px; margin-bottom: 10px">Learn more</button>
             </div>`
 }
 
@@ -43,7 +51,7 @@ function showSpotlight(spotlight) {
 function showPublicPrograms(public_programs) {
     $("#public_programs").empty();
     public_programs.forEach((work, idx) => {
-        $('#public_programs').append(get_work_object(work));
+        $('#public_programs').append(get_public_object(work));
     });
 
     $('.learn_more_btn').on('click', function(){
@@ -56,7 +64,7 @@ function showPublicPrograms(public_programs) {
 function showPublicLectures(public_lectures) {
     $("#public_lectures").empty();
     public_lectures.forEach((work, idx) => {
-        $('#public_lectures').append(get_work_object(work));
+        $('#public_lectures').append(get_public_object(work));
     });
 
     $('.learn_more_btn').on('click', function(){
@@ -69,7 +77,7 @@ function showPublicLectures(public_lectures) {
 function showReaders(readers) {
     $("#readers").empty();
     readers.forEach((work, idx) => {
-        $('#readers').append(get_work_object(work));
+        $('#readers').append(get_public_object(work));
     });
 
     $('.learn_more_btn').on('click', function(){

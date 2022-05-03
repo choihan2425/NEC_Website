@@ -6,10 +6,45 @@
     --darker-green: #4f772d;
     --green: #b5c99a;
     --light-green: #cfe1b9;
+    --baige: #faf4ea;
+
 }
 
 #people_header {
     font-family: 'Libre Bodoni', serif;
+    font-size: 70px;
+    margin-left: 4%;
     color: var(--darker-green);
 }
+#people_banner_img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#content_body{
+    padding: 0px 40px 20px;
+}
 
+#content_body p, #content_body h6{
+    font-size: large;
+}
+
+#content_body h3{
+    font-size:xx-large;
+}
+
+.team-group{
+    border-radius: 15px 40px;
+    margin:2rem 0.5rem;
+    padding: 1rem;
+    background-color: var(--baige);
+}
+
+.person{
+    margin-bottom: 0.4rem;
+}
+
+/*Person Role*/
+.person p{
+    font-style: italic;
+}
