@@ -12,7 +12,7 @@ app.use(express.static(__dirname + "/public"));
 
 //Initialize passport
 app.use(session({
-    secret: "MyLittleSecretThatIdontWantOthersToKnow",
+    secret: process.env.PASSPORT_SECRET,
     resave: false,
     saveUninitialized: false
 }));
