@@ -103,8 +103,8 @@ const networkSchema = {
 
 const Network = mongoose.model('Network', networkSchema)
 
-app.listen(3000, function () {
-    console.log("server started at 3000");
+app.listen(8080, function () {
+    console.log("server started at 8080");
 });
 
 app.get("/", function (req, res) {
