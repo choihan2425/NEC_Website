@@ -1,4 +1,5 @@
-//npm i express body-parser mongoose express-session passport passport-local-mongoose
+//npm i express body-parser mongoose express-session passport passport-local-mongoose csv-parser dotenv
+require('dotenv').config()
 const express = require("express");
 const bodyParser = require('body-parser');
 const app = express();
@@ -20,7 +21,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect('mongodb://127.0.0.1:27017/necDB',
+mongoose.connect(uri,
     {useNewUrlParser: true}, function () {
         console.log("db connection successful");
     });

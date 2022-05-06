@@ -1,10 +1,12 @@
+require('dotenv').config()
 const mongoose = require('mongoose');
 const parse = require('csv-parser');
 const fs = require('fs');
 const networkData = fs.readFileSync(__dirname + "/networks.json");
 const networkJSON = JSON.parse(networkData)
+const uri = process.env.MONGODB_URI;
 
-mongoose.connect('mongodb://127.0.0.1:27017/necDB',
+mongoose.connect(uri,
     {useNewUrlParser: true}, function () {
         console.log("db connection successful");
     });
