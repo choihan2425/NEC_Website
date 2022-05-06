@@ -1,5 +1,5 @@
 //npm i express body-parser mongoose express-session passport passport-local-mongoose csv-parser dotenv
-require('dotenv').config()
+const dotenv = require('dotenv').config()
 const express = require("express");
 const bodyParser = require('body-parser');
 const app = express();
