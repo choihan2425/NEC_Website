@@ -44,6 +44,7 @@ const userSchema = new mongoose.Schema(
         },
         likes: [
             {
+                id:String,
                 title: String,
                 date: String,
             }
@@ -372,6 +373,7 @@ app.post('/like_event', (req, res) => {
         // save the car to the user
         const uname = req.user.username
         const event = {
+            id:req.body.id,
             title: req.body.title,
             date: req.body.date,
         }

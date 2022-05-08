@@ -48,6 +48,7 @@ function onLikeEvent() {
 
     //year make model color price
     let current = {
+        "id": event_id,
         "title": event.title,
         "date": event.date,
     }
